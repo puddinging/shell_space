@@ -25,3 +25,29 @@ a=10
 b=20
 temp=`expr $a + $b`
 echo $temp
+
+# 语句给变量赋值
+for file in $(ls /etc)
+do
+    echo ${file}
+done
+
+# 只读变量 不可被修改，不可被删除
+x='aaa'
+# readonly x
+# unset x
+# x='bbb'
+
+# 字符串
+# 单引号里边所有的字符都会原样输出，单引号中引用的变量是无效的
+name='${str}'
+echo ${name}
+#双引号
+#双引号里边可以有变量，双引号里边可以出现转义字符
+echo "$name"
+
+# 数组
+# 在shell里边，@一般代表获取所有元素，#代表元素长度，例如数组里边
+arr_demo=("a", "b", "c")
+echo ${arr_demo[@]}
+echo ${#arr_demo}
