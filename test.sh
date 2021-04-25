@@ -1,8 +1,10 @@
 #!/bin/sh
 echo "hello world"
-cmd=$1
-echo "${cmd}"
-
-if [ "${cmd}" == "-i" ]; then
-    echo "你输入了第一个参数，这个参数是$2"
+num1=100
+num2=200
+if test $[num1] -eq $[num2]
+then
+    echo '两数相等'
+else 
+    echo '两数不相等'
 fi
